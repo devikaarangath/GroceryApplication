@@ -4,6 +4,7 @@ package testscript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Utilities.GroceryExcelUtility;
@@ -22,6 +23,8 @@ public class LoginTest extends DemoBase {
 		loginPage.enterPasswordOnPasswordField(password);
 		loginPage.rememberMeonRememberMefield();
 		loginPage.clickOnLogin();
+		boolean dashboarddisplay = loginPage.isDashboardDisplayed();
+		Assert.assertTrue(dashboarddisplay,"User couldnot login with valid credentials");
 	}
 	@Test
 	public void verifyLoginWithInValidUserNameAndValidPassword() throws IOException {
@@ -32,6 +35,9 @@ public class LoginTest extends DemoBase {
 		loginPage.enterPasswordOnPasswordField(password);
 		loginPage.rememberMeonRememberMefield();
 		loginPage.clickOnLogin();
+		String actual = loginPage.getPageTitle();
+		String expected ="7rmart supermarket";
+		Assert.assertEquals(actual, expected,"User able login with invalid username");
 	}
 	@Test
 	public void verifyLoginWithValidUserNameInvalidPassword() throws IOException {
@@ -42,6 +48,9 @@ public class LoginTest extends DemoBase {
 		loginPage.enterPasswordOnPasswordField(password);
 		loginPage.rememberMeonRememberMefield();
 		loginPage.clickOnLogin();
+		String actual = loginPage.getPageTitle();
+		String expected ="7rmart supermarket";
+		Assert.assertEquals(actual, expected,"User able login with invalid password");
 	}
 	
 	@Test
@@ -53,6 +62,9 @@ public class LoginTest extends DemoBase {
 		loginPage.enterPasswordOnPasswordField(password);
 		loginPage.rememberMeonRememberMefield();
 		loginPage.clickOnLogin();
+		String actual = loginPage.getPageTitle();
+		String expected ="7rmart supermarket";
+		Assert.assertEquals(actual, expected,"User able login with invalid credentials");
 	}
 	
 

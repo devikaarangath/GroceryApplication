@@ -2,20 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-11T17:58:14 IST" name="Default suite" finished-at="2025-09-11T17:58:18 IST" duration-ms="3785">
+  <suite started-at="2025-09-17T20:08:10 IST" name="Default suite" finished-at="2025-09-17T20:08:20 IST" duration-ms="9673">
     <groups>
     </groups>
-    <test started-at="2025-09-11T17:58:14 IST" name="Default test" finished-at="2025-09-11T17:58:18 IST" duration-ms="3785">
-      <class name="testscript.LoginTest">
-        <test-method is-config="true" signature="intialiseBrowser()[pri:0, instance:testscript.LoginTest@5b12b668]" started-at="2025-09-11T17:58:14 IST" name="intialiseBrowser" finished-at="2025-09-11T17:58:17 IST" duration-ms="2757" status="PASS">
+    <test started-at="2025-09-17T20:08:10 IST" name="Default test" finished-at="2025-09-17T20:08:20 IST" duration-ms="9673">
+      <class name="testscript.ManageNewsTest">
+        <test-method is-config="true" signature="intialiseBrowser()[pri:0, instance:testscript.ManageNewsTest@7e6f74c]" started-at="2025-09-17T20:08:10 IST" name="intialiseBrowser" finished-at="2025-09-17T20:08:13 IST" duration-ms="2372" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- intialiseBrowser -->
-        <test-method signature="verifyLoginWithInValidCredentials()[pri:0, instance:testscript.LoginTest@5b12b668]" started-at="2025-09-11T17:58:17 IST" name="verifyLoginWithInValidCredentials" finished-at="2025-09-11T17:58:18 IST" duration-ms="993" status="PASS">
+        <test-method signature="verifyUserIsAbleToReset()[pri:0, instance:testscript.ManageNewsTest@7e6f74c]" started-at="2025-09-17T20:08:13 IST" name="verifyUserIsAbleToReset" finished-at="2025-09-17T20:08:19 IST" duration-ms="6759" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginWithInValidCredentials -->
-      </class> <!-- testscript.LoginTest -->
+        </test-method> <!-- verifyUserIsAbleToReset -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageNewsTest@7e6f74c]" started-at="2025-09-17T20:08:19 IST" name="driverQuit" finished-at="2025-09-17T20:08:20 IST" duration-ms="494" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserIsAbleToReset status=SUCCESS method=ManageNewsTest.verifyUserIsAbleToReset()[pri:0, instance:testscript.ManageNewsTest@7e6f74c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testscript.ManageNewsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
