@@ -28,7 +28,7 @@ public class ManageNewsTest extends DemoBase {
 		loginPage.clickOnLogin();
 		newspage.clickOnMoreInfo();
 		newspage.clickOnManageNewsNew();
-		String news = randomdata.createRandonText();
+		String news = GroceryExcelUtility.getStringData(5, 0, "LoginPage");
 		newspage.enterTheNews(news);
 		newspage.saveButtonClick();
 		
@@ -48,7 +48,9 @@ public class ManageNewsTest extends DemoBase {
 		loginPage.clickOnLogin();
 		newspage.clickOnMoreInfo();
 		newspage.clickOnSearchNews();
-		newspage.enterSearch("Assignment");
+		
+		String news = GroceryExcelUtility.getStringData(5, 0, "LoginPage");
+		newspage.enterSearch(news);
 		newspage.clickOnSearchNewsButton();
 		int actual = adminpage.tableRowCount();
 		int expected = 1;
