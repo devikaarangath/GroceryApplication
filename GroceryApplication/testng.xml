@@ -4,10 +4,15 @@
 <listeners> 
 <listener class-name="reportGeneration.Listeners"></listener>
 </listeners>
+<parameter name="browsers" value="Chrome"></parameter>
   <test thread-count="5" name="Test">
   
     <classes>
-      <class name="testscript.HomeTest"/>
+      <class  name="testscript.HomeTest">
+      <methods>
+      <include name="verifyUserIsAbleToLogOut"></include>
+      </methods>
+      </class>
       
     </classes>
   </test> <!-- Test -->

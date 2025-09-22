@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import Utilities.GroceryExcelUtility;
 import Utilities.RandomDataUtility;
+import constant.Constants;
 import grocerybase.DemoBase;
 import grocerypages.AdminPage;
 import grocerypages.LoginPage;
@@ -33,7 +34,7 @@ public class AdminTest extends DemoBase {
 		adminpage.clickOnDropDown();
 		adminpage.clickOnSave();
 		boolean alertdisplayed = adminpage. alertMessage();
-		Assert.assertTrue(alertdisplayed,"User not added");
+		Assert.assertTrue(alertdisplayed,Constants.USERNOTADDED);
 	}
 	@Test
 	public void verifyUserIsAbleToSearchUser() throws IOException {
@@ -54,7 +55,7 @@ public class AdminTest extends DemoBase {
 		adminpage.clickOnSearchUser();
 		int actual = adminpage.tableRowCount();
 		int expected = 1;
-		Assert.assertEquals(actual, expected,"Error in searching user");
+		Assert.assertEquals(actual, expected,Constants.ERRORINSEARCHINGUSER);
 	}
 	@Test
 	public void verifyUserIsAbleToReset() throws IOException {
@@ -71,7 +72,7 @@ public class AdminTest extends DemoBase {
 		adminpage.clickOnReset();
 		int actual = adminpage.numberOfForms();
 		int expected = 0;
-		Assert.assertEquals(actual, expected,"Error in searching user");
+		Assert.assertEquals(actual, expected,Constants.SEARCHINGUSERERROR);
 	}
 
 }

@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Utilities.GroceryExcelUtility;
+import constant.Constants;
 import grocerybase.DemoBase;
 import grocerypages.LoginPage;
 
@@ -24,7 +25,7 @@ public class LoginTest extends DemoBase {
 		loginPage.rememberMeonRememberMefield();
 		loginPage.clickOnLogin();
 		boolean dashboarddisplay = loginPage.isDashboardDisplayed();
-		Assert.assertTrue(dashboarddisplay,"User couldnot login with valid credentials");
+		Assert.assertTrue(dashboarddisplay,Constants.VALIDCREDENDIALERROR);
 	}
 	@Test
 	public void verifyLoginWithInValidUserNameAndValidPassword() throws IOException {
@@ -37,7 +38,7 @@ public class LoginTest extends DemoBase {
 		loginPage.clickOnLogin();
 		String actual = loginPage.getPageTitle();
 		String expected ="7rmart supermarket";
-		Assert.assertEquals(actual, expected,"User able login with invalid username");
+		Assert.assertEquals(actual, expected,Constants.INVALIDUSERNAME);
 	}
 	@Test
 	public void verifyLoginWithValidUserNameInvalidPassword() throws IOException {
@@ -50,7 +51,7 @@ public class LoginTest extends DemoBase {
 		loginPage.clickOnLogin();
 		String actual = loginPage.getPageTitle();
 		String expected ="7rmart supermarket";
-		Assert.assertEquals(actual, expected,"User able login with invalid password");
+		Assert.assertEquals(actual, expected,Constants.INVALIDPASSWORD);
 	}
 	
 	@Test
@@ -64,7 +65,7 @@ public class LoginTest extends DemoBase {
 		loginPage.clickOnLogin();
 		String actual = loginPage.getPageTitle();
 		String expected ="7rmart supermarket";
-		Assert.assertEquals(actual, expected,"User able login with invalid credentials");
+		Assert.assertEquals(actual, expected,Constants.INVALIDCREDENDIALS);
 	}
 	
 

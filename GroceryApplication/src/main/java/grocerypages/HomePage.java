@@ -13,7 +13,7 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 	@FindBy(xpath="//a[@data-toggle='dropdown']") private WebElement admin;
-	@FindBy(xpath="//a[@class='dropdown-item']") private WebElement logout;  
+	@FindBy(xpath="//div[@class='dropdown-menu dropdown-menu-lg dropdown-menu-right text_black show']/a[@href='https://groceryapp.uniqassosiates.com/admin/logout']") private WebElement logout;  
 	
 	public void clickOnadmin() {
 		admin.click();

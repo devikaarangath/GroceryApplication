@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import Utilities.GroceryExcelUtility;
 import Utilities.RandomDataUtility;
+import constant.Constants;
 import grocerybase.DemoBase;
 import grocerypages.AdminPage;
 import grocerypages.LoginPage;
@@ -33,7 +34,7 @@ public class ManageNewsTest extends DemoBase {
 		newspage.saveButtonClick();
 		
 		boolean alertdisplayed = newspage.alertMessage();
-		Assert.assertTrue(alertdisplayed,"News not added");
+		Assert.assertTrue(alertdisplayed,Constants.NEWSNOTADDED);
 	}
 	@Test
 	public void verifyUserIsAbleToSearchUser() throws IOException {
@@ -54,7 +55,7 @@ public class ManageNewsTest extends DemoBase {
 		newspage.clickOnSearchNewsButton();
 		int actual = adminpage.tableRowCount();
 		int expected = 1;
-		Assert.assertEquals(actual, expected,"Error in searching news");
+		Assert.assertEquals(actual, expected,Constants.ERRORINSEARCHINGNEWS);
 	}
 	@Test
 	public void verifyUserIsAbleToReset() throws IOException {
@@ -72,7 +73,7 @@ public class ManageNewsTest extends DemoBase {
 		newspage.resetManageNews();
 		int actual = adminpage.numberOfForms();
 		int expected = 0;
-		Assert.assertEquals(actual, expected,"Error in reseting the page");
+		Assert.assertEquals(actual, expected,Constants.ERRORINRESETINGPAGE);
 	}
 
 
