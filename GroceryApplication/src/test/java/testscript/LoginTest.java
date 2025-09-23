@@ -15,7 +15,7 @@ import grocerypages.LoginPage;
 
 public class LoginTest extends DemoBase {
 	
-	@Test
+	@Test(groups= {"smoke"})
 	public void verifyUserWithValidCredenetials() throws IOException {
 		String username = GroceryExcelUtility.getStringData(0, 0, "LoginPage");
 		String password =GroceryExcelUtility.getStringData(0, 1, "LoginPage");
@@ -54,7 +54,7 @@ public class LoginTest extends DemoBase {
 		Assert.assertEquals(actual, expected,Constants.INVALIDPASSWORD);
 	}
 	
-	@Test
+	@Test(groups= {"smoke"})
 	public void verifyLoginWithInValidCredentials() throws IOException {
 		String username = GroceryExcelUtility.getStringData(3, 0, "LoginPage");
 		String password =GroceryExcelUtility.getStringData(3, 1, "LoginPage");

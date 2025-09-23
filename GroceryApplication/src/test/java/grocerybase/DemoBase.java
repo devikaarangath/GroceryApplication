@@ -21,7 +21,7 @@ public class DemoBase {
 	public WebDriver driver;
 	
 	@Parameters("browsers")
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public void intialiseBrowser(@Optional("chrome")String browsers) throws Exception {
 	if(browsers.equalsIgnoreCase("Chrome"))
 	{
@@ -32,10 +32,8 @@ public class DemoBase {
 		
 	}
 	else if(browsers.equalsIgnoreCase("Edge")){
-		WebDriverManager.edgedriver()
-	    .clearResolutionCache()
-	    .forceDownload()
-	    .setup();
+		WebDriverManager.edgedriver();
+	   
 		driver = new EdgeDriver();
 	} else {
 		throw new Exception("Invalid Browser"); 
@@ -53,7 +51,7 @@ public class DemoBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));//duration - predefined class
 	}
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void driverQuit(ITestResult iTestResult) throws IOException {
 
 		if (iTestResult.getStatus() == ITestResult.FAILURE) {

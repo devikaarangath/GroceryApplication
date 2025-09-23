@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CrossBrowsertesting]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Chrome(failed)">
+    <parameter name="browsers" value="ChromeTest"/>
+    <classes>
+      <class name="testscript.HomeTest">
+        <methods>
+          <include name="driverQuit"/>
+          <include name="intialiseBrowser"/>
+          <include name="verifyUserIsAbleToLogOut"/>
+        </methods>
+      </class> <!-- testscript.HomeTest -->
+    </classes>
+  </test> <!-- Chrome(failed) -->
+  <test thread-count="5" name="Edge(failed)">
+    <parameter name="browsers" value="EdgeTest"/>
+    <classes>
+      <class name="testscript.HomeTest">
+        <methods>
+          <include name="driverQuit"/>
+          <include name="intialiseBrowser"/>
+          <include name="verifyUserIsAbleToLogOut"/>
+        </methods>
+      </class> <!-- testscript.HomeTest -->
+    </classes>
+  </test> <!-- Edge(failed) -->
+  <test thread-count="5" name="Firefox(failed)">
+    <parameter name="browsers" value="FirefoxTest"/>
+    <classes>
+      <class name="testscript.HomeTest">
+        <methods>
+          <include name="driverQuit"/>
+          <include name="intialiseBrowser"/>
+          <include name="verifyUserIsAbleToLogOut"/>
+        </methods>
+      </class> <!-- testscript.HomeTest -->
+    </classes>
+  </test> <!-- Firefox(failed) -->
+</suite> <!-- Failed suite [CrossBrowsertesting] -->
