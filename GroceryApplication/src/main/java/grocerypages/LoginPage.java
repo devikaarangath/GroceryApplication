@@ -16,24 +16,27 @@ public class LoginPage {
 	@FindBy(xpath="//input[@placeholder='Username']") private WebElement username;
 	@FindBy(xpath="//input[@placeholder='Password']") private WebElement password;
 	@FindBy(xpath="//button[@class='btn btn-dark btn-block']") private WebElement signin;
-	@FindBy(xpath="//label[@for='remember']") private WebElement rememberme;
+	//@FindBy(xpath="//label[@for='remember']") private WebElement rememberme;
 	@FindBy(xpath="//p[text()='Dashboard']") private WebElement dashboard;
 	@FindBy(xpath="//b[text()='7rmart supermarket']") private WebElement loginpagetitle;
 	
-	public void enterUsernameOnUsernameField(String usernameValue) {
+	public LoginPage enterUsernameOnUsernameField(String usernameValue) {
 		username.sendKeys(usernameValue);
+		return this;
 	}
-	public void enterPasswordOnPasswordField(String passwordValue) {
+	public LoginPage enterPasswordOnPasswordField(String passwordValue) {
 		password.sendKeys(passwordValue);
+		return this;
 		
 	}
-	public void  clickOnLogin() {
+	public HomePage  clickOnLogin() {
 		signin.click();
+		return new HomePage(driver);
 	}
-	public void rememberMeonRememberMefield() {
-		rememberme.click();
+	//public void rememberMeonRememberMefield() {
+	//	rememberme.click();
 		
-	}
+	//}
 	public boolean isDashboardDisplayed() {
 		return dashboard.isDisplayed();
 	}

@@ -33,46 +33,55 @@ public class AdminPage {
 	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']/tbody/tr") private List<WebElement> tablerows;
 	@FindBy(xpath="//section[@class='content']/form") private List<WebElement> forms;
 	
-	public void clickOnMoreinfo() {
+	public AdminPage clickOnMoreinfo() {
 		moreinfo.click();
-		
+		return this;
 	}
 	
-	public void clickOnNewButton() {
+	public AdminPage clickOnNewButton() {
 		newbutton.click();
-		
+		return this;
 	}
-	public void enterUserNameOnUserNameField(String usernamevalue) {
+	public AdminPage enterUserNameOnUserNameField(String usernamevalue) {
 		username.sendKeys(usernamevalue);
+		return this;
 		
 	}
-	public void enterPasswordOnPasswordField(String passwordvalue ) {
+	public AdminPage enterPasswordOnPasswordField(String passwordvalue ) {
 		password.sendKeys(passwordvalue);
+		return this;
 		
 	}
-    public void clickOnUserType() {
+    public AdminPage clickOnUserType() {
     	usertype.click();	
+    	return this;
     	
     }
-    public void clickOnDropDown() {
+    public AdminPage clickOnDropDown() {
     	dropdown.click();	
+    	return this;
     	
     }
-    public void clickOnSave() {
+    public AdminPage clickOnSave() {
     	save.click();
+    	return this;
     	
     }
-    public void clickOnSearch() {
+    public AdminPage clickOnSearch() {
     	search.click();
+    	return this;
     }
-    public void enterSearchUserOnUsernameField(String searchUserName) {
+    public AdminPage enterSearchUserOnUsernameField(String searchUserName) {
     	searchuser.sendKeys(searchUserName);
+    	return this;
     }
-    public void clickOnSearchUserType() {
+    public AdminPage clickOnSearchUserType() {
     	searchusertype.click();
+    	return this;
     }
-    public void selectSearchUserType() {
+    public AdminPage selectSearchUserType() {
     	dropdownusertype.click();
+    	return this;
     }
     public void clickOnSearchUser() {
     	newusersearch.click();

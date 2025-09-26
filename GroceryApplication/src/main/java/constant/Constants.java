@@ -13,4 +13,6 @@ public static final String ERRORINSEARCHINGNEWS = "Error in searching news";
 public static final String ERRORINRESETINGPAGE = "Error in reseting the page";
 public static final String NOTLOGOUT = "User couldnot logout";
 
+public static final String EXCELPATH = System.getProperty("user.dir") + "\\src\\test\\resources\\GroceryTest.xlsx";
+public static final String CONFIGPATH =System.getProperty("user.dir")  + "\\src\\main\\resources\\config.properties";
 }

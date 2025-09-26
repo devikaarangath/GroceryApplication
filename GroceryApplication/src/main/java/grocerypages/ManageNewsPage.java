@@ -27,31 +27,38 @@ public class ManageNewsPage {
 	@FindBy(xpath="//section[@class='content']/form") private List<WebElement> forms;
 
 	
-	public void clickOnMoreInfo() {
+	public ManageNewsPage clickOnMoreInfo() {
 		moreinfo.click();
+		return this;
 	}
 	
 	
-	public void clickOnManageNewsNew() {
+	public ManageNewsPage clickOnManageNewsNew() {
 		newmanage.click();
+		return this;
 		
 	}
 
-	public void enterTheNews(String enterthenews) {
+	public ManageNewsPage enterTheNews(String enterthenews) {
 		news.sendKeys(enterthenews);
+		return this;
 
 }
-	public void saveButtonClick() {
+	public ManageNewsPage saveButtonClick() {
 		save.click();
+		return this;
 }
-	public void enterSearch(String entertitle) {
+	public ManageNewsPage enterSearch(String entertitle) {
 		searchmanagenews.sendKeys(entertitle);
+		return this;
 	}
-	public void clickOnSearchNews() {
+	public ManageNewsPage clickOnSearchNews() {
 		searchnews.click();
+		return this;
 	}
-	public void clickOnSearchNewsButton() {
+	public ManageNewsPage clickOnSearchNewsButton() {
 		searchnewsbutton.click();
+		return this;
 	}
 	public void resetManageNews() {
 		resetmanagenews.click();

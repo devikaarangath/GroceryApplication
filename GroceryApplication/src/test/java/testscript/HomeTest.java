@@ -12,19 +12,19 @@ import grocerypages.HomePage;
 import grocerypages.LoginPage;
 
 public class HomeTest extends DemoBase {
-	@Test
+	HomePage homepage;
+	@Test(priority = 1,description="verify user is able to logout")
 	public void verifyUserIsAbleToLogOut() throws IOException {
 		String username = GroceryExcelUtility.getStringData(0, 0, "LoginPage");
 		String password =GroceryExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginPage = new LoginPage(driver);
-		HomePage homepage = new HomePage(driver);
-		loginPage.enterUsernameOnUsernameField(username);
-		loginPage.enterPasswordOnPasswordField(password);
+		
+		loginPage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password);
 //		loginPage.rememberMeonRememberMefield();
-		loginPage.clickOnLogin();
+		homepage = loginPage.clickOnLogin();
 		
 		homepage.clickOnadmin();
-		homepage.clickOnLogOut();
+		loginPage =	homepage.clickOnLogOut();
 		String actual = loginPage.getPageTitle();
 		String expected ="7rmart supermarket";
 		Assert.assertEquals(actual, expected,Constants.NOTLOGOUT);

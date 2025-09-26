@@ -1,7 +1,9 @@
 package grocerybase;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,15 +16,22 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import Utilities.ScreenshotUtility;
+import constant.Constants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class DemoBase {
+	Properties prop;
+	FileInputStream fs;
+	
 	public WebDriver driver;
 	
 	@Parameters("browsers")
 	@BeforeMethod(alwaysRun=true)
-	public void intialiseBrowser(@Optional("chrome")String browsers) throws Exception {
+	public void intialiseBrowser(@Optional("Chrome")String browsers) throws Exception {
+	prop = new Properties();
+	fs = new FileInputStream(Constants.CONFIGPATH);
+	prop.load(fs);
 	if(browsers.equalsIgnoreCase("Chrome"))
 	{
 		driver = new ChromeDriver();
@@ -47,7 +56,7 @@ public class DemoBase {
 //	    .setup();
 //		driver = new EdgeDriver();
 		
-		driver.get("https://groceryapp.uniqassosiates.com/admin/login");
+		driver.get(prop.getProperty("url")); 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));//duration - predefined class
 	}
