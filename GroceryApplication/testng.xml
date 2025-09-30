@@ -8,12 +8,10 @@
   <test thread-count="5" name="Test">
   
     <classes>
-      <class  name="testscript.ManageNewsTest">
+      <class  name="testscript.LoginTest">
       <methods>
-      	<include name="verifyUserIsAbleToAddNewNews"></include>
-      	<include name="verifyUserIsAbleToSearchNews"></include>
-      	<include name="verifyUserIsAbleToReset"></include>
-      	
+      	<include name="verifyUserWithValidCredenetials"></include>
+            	
       </methods>
       </class>
       

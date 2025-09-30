@@ -19,7 +19,7 @@ public class LoginTest extends DemoBase {
 	HomePage homepage;
 	
 	
-	@Test(groups= {"smoke"},priority = 1,description="User login using valid username and valid password")
+	@Test(groups= {"smoke"},priority = 1,description="User login using valid username and valid password",retryAnalyzer = retry.Retry.class)
 	public void verifyUserWithValidCredenetials() throws IOException {
 		String username = GroceryExcelUtility.getStringData(0, 0, "LoginPage");
 		String password =GroceryExcelUtility.getStringData(0, 1, "LoginPage");
