@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import Utilities.PageUtility;
+
 public class AdminPage {
 	public WebDriver driver;
 	//constructor creation is mandatory in 
@@ -81,6 +83,8 @@ public class AdminPage {
     }
     public AdminPage selectSearchUserType() {
     	dropdownusertype.click();
+    	PageUtility page = new PageUtility();
+    	page.selectDropdownWithIndex(usertype,2);
     	return this;
     }
     public void clickOnSearchUser() {

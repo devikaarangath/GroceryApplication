@@ -13,6 +13,13 @@ public class PageUtility {
 		object.selectByValue(value);
 
 	}
+	
+	public void selectDropdownWithIndex(WebElement element, int index) {
+
+		Select select = new Select(element);
+		select.selectByIndex(index);
+
+	}
 	//method to perform click action
 	
 	public void sendDataToElement(WebElement element  ) {
